@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HeroSection } from "./components/hero-section/HeroSection";
 import { ProjectsSection } from "./components/projects-section/ProjectsSection";
 import { Skills } from "./components/skills/Skills";
@@ -68,10 +68,10 @@ const getPageData = async (): Promise<HomePageData | null> => {
 };
 
 // Use the typed prop in the Home component
-export default function Home({ pageData: initialPageData }: InitialPageProps) {
-    const [pageData, setPageData] = React.useState(initialPageData);
+const Home: React.FC<InitialPageProps> = ({ pageData: initialPageData }) => {
+    const [pageData, setPageData] = useState(initialPageData);
 
-    React.useEffect(() => {
+    useEffect(() => {
         async function fetchData() {
             const data = await getPageData();
             setPageData(data);
@@ -94,4 +94,6 @@ export default function Home({ pageData: initialPageData }: InitialPageProps) {
             <WorkExperienceSection />
         </>
     );
-}
+};
+
+export default Home;
