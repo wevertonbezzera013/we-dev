@@ -10,7 +10,8 @@ import { WorkExperienceSection } from "./components/work-experience-section/Work
 import { HomePageData } from "./types/page-info";
 import { GraphQLClient } from "graphql-request";
 
-export const metadata = {
+// Define metadata outside of the component
+const metadata = {
     title: "Home",
 };
 
