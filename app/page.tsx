@@ -10,11 +10,6 @@ import { WorkExperienceSection } from "./components/work-experience-section/Work
 import { HomePageData } from "./types/page-info";
 import { GraphQLClient } from "graphql-request";
 
-// Define metadata outside of the component
-const metadata = {
-    title: "Home",
-};
-
 // Define the prop type for the Home component
 type InitialPageProps = {
     pageData: HomePageData | null;
@@ -73,7 +68,6 @@ const getPageData = async (): Promise<HomePageData | null> => {
 };
 
 // Use the typed prop in the Home component
-
 export default function Home({ pageData: initialPageData }: InitialPageProps) {
     const [pageData, setPageData] = React.useState(initialPageData);
 
