@@ -74,7 +74,7 @@ const getPageData = async (): Promise<HomePageData | null> => {
 
 // Use the typed prop in the Home component
 
-const Home: React.FC<InitialPageProps> = ({ pageData: initialPageData }) => {
+export default function Home({ pageData: initialPageData }: InitialPageProps) {
     const [pageData, setPageData] = React.useState(initialPageData);
 
     React.useEffect(() => {
@@ -100,6 +100,4 @@ const Home: React.FC<InitialPageProps> = ({ pageData: initialPageData }) => {
             <WorkExperienceSection />
         </>
     );
-};
-
-export default Home;
+}
